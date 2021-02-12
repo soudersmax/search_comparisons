@@ -3,7 +3,7 @@
 
 Running search_compare will:
 
-    1. Take user input to generate a random list of integers 
+    1. Take user input to generate a random list of integers or strings 
     2. Run and time each type of search automatically
 
 
