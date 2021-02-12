@@ -6,30 +6,37 @@ import time
 
 
 def run_search():
-    list_type = input('Would you like to search strings or integers? (str/int) ')
     
-    if list_type == 'int':
+    repeat = True
+    while repeat == True:
+
+        list_type = input('Would you like to search strings or integers? (str/int) ')        
         
-        max_num = int(input('What do you want the maximum to be? '))
-        n = int(input('How long do you want your list? '))
-        
-        search_list = num_list(max_num,n)
+        if list_type == 'int': 
+            
+            repeat = False       
+            
+            max_num = int(input('What do you want the maximum to be? '))
+            n = int(input('How long do you want your list? '))
 
-        print(search_list)
-        
-        target = int(input('What number do  you want to look for? '))
+            search_list = num_list(max_num,n)
 
-    elif list_type == 'str':
+            print(search_list)
 
-        limit = int(input('How many words would you like in the list? '))
-        search_list = word_list(limit)
+            target = int(input('What number do  you want to look for? '))
 
-        print(search_list)
+        elif list_type == 'str':
 
-        target = str(input('What word would you like to look for? '))
+            repeat = False
 
-    else:
-        print("Please enter 'str' or 'int'.")
+            limit = int(input('How many words would you like in the list? '))
+            search_list = word_list(limit)
+            print(search_list)
+
+            target = str(input('What word would you like to look for? '))
+
+        else:
+            print("Please enter 'str' or 'int'.")
 
     go = input('Run search? (y/n) ')
     if go == 'y':

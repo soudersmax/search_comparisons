@@ -1,8 +1,7 @@
 # write a function that generates a list of ints of 'n' length 
 import random
-from random_word import RandomWords
-
-r = RandomWords()
+import nltk
+from nltk.corpus import words
 
 def num_list(max_num, n):
 
@@ -16,17 +15,7 @@ def num_list(max_num, n):
     return random_list
 
 def word_list(limit):
-
-    word_list = None
-    random_list = []
     
-    while word_list is None:
-        word_list = r.get_random_words(limit=limit)
-
-    for word in word_list:
-        lower_word= word.lower()
-        random_list.append(lower_word)
-
+    random_list = random.sample(words.words(), limit)
     random_list.sort()
-    #print(random_list)
     return random_list
