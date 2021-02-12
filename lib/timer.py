@@ -1,10 +1,10 @@
 import time
 
 
-def timed_function(function_name, a, b):
+def timed_function(function_name, target, search_list):
 
     tic = time.perf_counter()
-    function_name(a, b)
+    function_name(target, search_list)
     toc = time.perf_counter()
 
     timer = toc - tic

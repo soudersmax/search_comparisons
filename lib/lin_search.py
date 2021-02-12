@@ -1,27 +1,22 @@
-# Write a linear search function with a timer
-def lin_search(a,b):
+def lin_search(target,search_list):
 
-    start = b[0]
-    end = b[-1]
-    i = 0
-    
-    if a < start or a > end:
-        print(f'{a} is not in the list.')
+    start = search_list[0]
+    end = search_list[-1]
+
+    if target < start or target > end:
+        print(f'{target} is not in the list.')
         return None 
 
-    while i in range(0, end):
+    for item in range(0,len(search_list)): 
         
-        if a == b[i]:
-            print(f'{a} is at index {i}.')          
-            return i
+        if target == search_list[item]:
+            print(f'{target} is at index {item}.')          
+            return item
         
-        elif a > b[i]:
-            i +=1
-        
-        else:
-            print(f'{a} is not in the list.')
+        elif target < search_list[item]:
+            print(f'{target} is not in the list.')
             return None
 
-    print(f'{a} is not in the list.')
+    print(f'{target} is not in the list.')
     return None
 
